@@ -21,12 +21,31 @@ document.addEventListener('DOMContentLoaded', function(){
               cards[i].querySelector('.movie-title').innerText = movie.title;
               cards[i].querySelector('.movie-description').innerText = movie.overview;
 
-              // Set the link for each movie
               const movieLink = cards[i].querySelector('.movie-link');
-              movieLink.href = `/movie-details.html?id=${movie.id}`; // Assuming you have a movie-details.html page
+              movieLink.href = `/movie-details.html?id=${movie.id}`;
           }
       }
   })
   .catch(err => console.error(err));
+
+
+  if(document.querySelector('.movie-poster')) {
+    const urlParam = new URLSearchParams(window.location.search);
+    const movieID = urlParam.get('id');
+
+    if (movieID) {
+      fetch(`https://api.themoviedb.org/3/movie/${movieID}`, options)
+        .then(response => response.json())
+        .then(movie => {
+          document.querySelector('.movie-poster').src = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
+          document.querySelector('.movie-title').innerText = movie.title;
+          document.querySelector('.movie-description').innerText = movie.overview;
+        })
+    }
+  }
+
+
+
+
 
 });
