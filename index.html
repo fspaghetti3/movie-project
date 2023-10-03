@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/styles/style.css">
     <script src="/assets/js/script.js"></script>
     
     <title>Document</title>
@@ -19,28 +20,26 @@
         
     </header>
 
+
+    <section class="flex justify-center m-10">
+        <input type="text" id="searchBar" class="rounded-md border-2 border-black shadow-xl shadow-black scale-125 w-96 placeholder:text-center placeholder:text-slate-400 " placeholder="Search for your favorite movies!"></input>
+    </section>
+
     <div class="watchlist-containerLg">
-      <button class="open-watchlist" onclick="showWL()">Watchlist</button>
+      <button class="open-watchlist" onclick="showWL()">Your Watch List</button>
       <div class="watchlist-containerMd">
         <section class="watchlist-header">
+          <button class="close-watchlist" onclick="hideWL()"+>&times;</button>
           <h4>Your Watch-List</h4>
-          <div class="closeBtn-container">
-            <span class="close-watchlist" onclick="hideWL()">&times;</span>
-        </div>
         </section>
         <section class= "watchlist">
           <ol id="watchlist">
-          <li>movie 1</li>
+          <li>Avengers Endgamehhhhhhhhhhhhhhhhhhh</li>
+         
         </ol>
         </section>
       </div>
       </div>
-
-
-    
-    <section class="flex justify-center m-10">
-        <input type="text" id="searchBar" class="rounded-md border-2 border-black shadow-xl shadow-black scale-125 w-96 placeholder:text-center placeholder:text-slate-400 " placeholder="Search for your favorite movies!"></input>
-    </section>
 
 <div class="flex">
     <div class="card basis-1/5 px-3">

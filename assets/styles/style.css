@@ -1,0 +1,67 @@
+.watchlist-containerLg {
+  width: auto;
+  flex-basis: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  height: fit-content;
+  width: fit-content;
+}
+
+.watchlist-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.watchlist-containerMd {
+  margin-top: 10px;
+  background-color: silver;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  display: none;
+  padding: 5px;
+  padding-left: 25px;
+  border-radius: 5%;
+  box-shadow: 4px 4px 10px 5px black, 10px 10px 10px 5px #700;
+}
+.open-watchlist {
+  background-color: brown;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  border-radius: 10%;
+  opacity: 50%;
+  border: solid black 2px;
+  font-weight: bold;
+}
+
+.open-watchlist:hover {
+  opacity: 90%;
+  font-weight: bold;
+
+  box-shadow: 4px 4px 10px 5px black, 10px 10px 10px 5px #700;
+}
+
+.close-watchlist {
+  background-color: black;
+  position: relative;
+  left: -40px;
+  color: crimson;
+  margin-left: 20px;
+  width: 25px;
+  border-radius: 60%;
+}
+
+#watchlist {
+  list-style: decimal;
+}

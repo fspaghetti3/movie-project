@@ -1,7 +1,9 @@
+
+
 function showWL() {
   document.querySelector(".open-watchlist").style.display = "none";
   document.querySelector(".watchlist-containerMd").style.display = "block";
-}
+} 
 
 function hideWL() {
   document.querySelector(".open-watchlist").style.display = "block";
