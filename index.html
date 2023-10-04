@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/assets/js/script.js"></script>
-    
+
     <title>Document</title>
 </head>
 
@@ -14,43 +15,45 @@
 <body class="card-container bg-black">
 
     <header class="flex items-center justify-center bg-gradient-to-r from-red-700 to-black border-b-4 border-white">
-        <img src="./assets/images/New Project (1).png" alt="" class="max-w-xs">
-        <h1 class="text-5xl justify-center pr-28 text-white font-sans">The Movie Cave</h1>
-        
+        <img src="./assets/images/New Project (1).png" alt="" class="max-w-xl">
+      
+
 
     </header>
 
-    <aside class="filters">
-     
-      <button class="exitFiltersBtn" onclick="hideFilters()"> EXIT FILTERS</button>
-      <button class="filtersBtn" onclick="showFilters()" onclick="hideFilters()">FILTERS</button>
-      <div class="filters-containerLg">
-        <section class="filtersI">
-      
-              <button class="filtersI" onclick="expandFilter()" onclick="hideFiltersII()">Filter 1</button>
-              <div  class="filtersII">
-                <button>2</button>
-                <button>3</button>
-                <button>2</button>
-                <button>3</button>
-                <button>2</button>
-                <button>3</button>
-              </div>
-              
-            
-         
-              <button>Filter 2</button>
-        
-         
-              <button>Filter 3</button>
-              
-         
-              <button>Filter 4</button>
-        
-            
-              <button>Filter 5</button>
-     
-        </section>
+    <aside class="filters text-white fixed top-5 right-5 bg-black">
+
+        <button class="exitFiltersBtn" onclick="hideFilters()"> EXIT FILTERS</button>
+        <button class="filtersBtn" onclick="showFilters()" onclick="hideFilters()">FILTERS</button>
+        <div class="filters-containerLg hidden">
+            <section class="filtersI">
+
+                <button class="filtersI" onclick="expandFilter()" onclick="hideFiltersII()">Filter 1</button>
+                <div class="filtersII">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>3</button>
+                    <button>2</button>
+                    <button>1</button>
+                </div>
+
+
+
+                <button>Filter 2</button>
+
+
+                <button>Filter 3</button>
+
+
+                <button>Filter 4</button>
+
+
+                <button>Filter 5</button>
+
+            </section>
+
+   
       </div>
   
   
@@ -80,167 +83,251 @@
           <h4>Your Watch-List</h4>
           <div class="closeBtn-container">
             <span class="close-watchlist" onclick="hideWL()">&times;</span>
+
         </div>
-        </section>
-        <section class= "watchlist">
-          <ol id="watchlist">
-          <li>movie 1</li>
-        </ol>
-        </section>
-      </div>
-      </div>
 
 
-    
+    </aside>
+
+    <!-- Line 28-42 is the Watchlist HTML -->
+    <aside class="watchlist-containerLg text-white fixed bottom-12 border-4 border-white right-12 w-fit bg-[#3D0000] p-6  hover:bg-black hover:text-xl hover:font-bold">
+        <button class="open-watchlist" onclick="showWL()">Your Watch List</button>
+        <div class="watchlist-containerMd hidden">
+            <section class="watchlist-header">
+                <button class="close-watchlist" onclick="hideWL()">&times;</button>
+                <h4 class="text-2xl text-bold underline decoration-solid text-white ">Your Watch-List</h4>
+            </section>
+            <section class="watchlist">
+                <ol id="watchlist">
+                    <li>Avengers Endgame</li>
+
+                </ol>
+            </section>
+        </div>
+    </aside>
+
+<section class="text-center pb-5">
+    <p class="text-white text-6xl pt-10">Welcome to the cave</p>
+</section>
+
+
     <section class="flex justify-center m-10 ">
-        <input type="text" id="searchBar" class="rounded-md text-center  border-black shadow-lg shadow-red-700 scale-125 w-[28rem] h-[3rem] placeholder:text-center placeholder:text-slate-400 " placeholder="Search for your favorite movies!"></input>
+        <input type="text" id="searchBar"
+            class="rounded-md text-center  border-black shadow-lg shadow-red-700 scale-125 w-[28rem] h-[3rem] placeholder:text-center placeholder:text-slate-400 "
+            placeholder="Search for your favorite movies!"></input>
     </section>
 
-    <section class="flex justify-center text-5xl">
+    <section class="flex justify-center text-3xl text-white">
         <p>Now showing!</p>
     </section>
-<div class="flex justify-center flex-wrap  text-center">
-    <div class="card basis-1/10 px-3 block  max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
+    <div class="flex justify-center flex-wrap  text-center pb-20">
+        <div
+            class="card basis-1/10 px-3 block  max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
 
-      <a href="#" class="movie-link">  
-        <div class="options">
+            <a href="#" class="movie-link">
+                <div
+                    class="options bg-[#3D0000] p-3 border-4 border-black mt-3 rounded-lg flex items-center justify-center space-x-10">
 
-            <span title="Remove from watch-list" class="remove-pinned">❌</span><section class="options-score"></section><button  title="Add to watch-list" class="pinned">📌</button>
+                    <span title="Remove from watch-list" class="remove-pinned">❌</span>
+                    <section class="options-score"></section><button title="Add to watch-list"
+                        class="pinned">📌</button>
                 </div>
-        <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5">
-        <h2 class="movie-title p-6 text-3xl font-medium"></h2>
-       </a>  
-        <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold hidden"></p>
+                <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5 border-2 border-black">
+                <h2 class="movie-title p-6 text-3xl font-medium"></h2>
+            </a>
+            <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold hidden"></p>
+        </div>
+
+        <div
+            class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
+            <a href="#" class="movie-link">
+                <div
+                    class="options bg-[#3D0000] p-3 border-4 border-black mt-3 rounded-lg flex items-center justify-center space-x-10">
+
+                    <span title="Remove from watch-list" class="remove-pinned">❌</span>
+                    <section class="options-score"></section><button title="Add to watch-list"
+                        class="pinned">📌</button>
+                </div>
+                <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5 border-2 border-black">
+                <h2 class="movie-title p-6 text-3xl font-medium"></h2>
+            </a>
+            <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold hidden"></p>
+        </div>
+
+        <div
+            class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
+            <a href="#" class="movie-link">
+                <div
+                    class="options bg-[#3D0000] p-3 border-4 border-black mt-3 rounded-lg flex items-center justify-center space-x-10">
+
+                    <span title="Remove from watch-list" class="remove-pinned">❌</span>
+                    <section class="options-score"></section><button title="Add to watch-list"
+                        class="pinned">📌</button>
+                </div>
+                <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5 border-2 border-black">
+                <h2 class="movie-title p-6 text-3xl font-medium"></h2>
+            </a>
+            <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold hidden"></p>
+        </div>
+
+        <div
+            class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
+            <a href="#" class="movie-link">
+                <div
+                    class="options bg-[#3D0000] p-3 border-4 border-black mt-3 rounded-lg flex items-center justify-center space-x-10">
+
+                    <span title="Remove from watch-list" class="remove-pinned">❌</span>
+                    <section class="options-score"></section><button title="Add to watch-list"
+                        class="pinned">📌</button>
+                </div>
+                <img src="" alt="Movie Poster" class=" movie-poster rounded-lg pt-5 border-2 border-black">
+                <h2 class="movie-title p-6 text-3xl font-medium "></h2>
+            </a>
+            <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold hidden"></p>
+        </div>
+
+
+        <div
+            class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
+            <a href="#" class="movie-link">
+                <div
+                    class="options bg-[#3D0000] p-3 border-4 border-black mt-3 rounded-lg flex items-center justify-center space-x-10">
+
+                    <span title="Remove from watch-list" class="remove-pinned">❌</span>
+                    <section class="options-score"></section><button title="Add to watch-list"
+                        class="pinned">📌</button>
+                </div>
+                <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5 border-2 border-black">
+                <h2 class="movie-title p-6 text-3xl font-medium"></h2>
+            </a>
+            <p
+                class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden">
+            </p>
+        </div>
+        <div
+            class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
+            <a href="#" class="movie-link">
+                <div
+                    class="options bg-[#3D0000] p-3 border-4 border-black mt-3 rounded-lg flex items-center justify-center space-x-10">
+
+                    <span title="Remove from watch-list" class="remove-pinned">❌</span>
+                    <section class="options-score"></section><button title="Add to watch-list"
+                        class="pinned">📌</button>
+                </div>
+                <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5 border-2 border-black">
+                <h2 class="movie-title p-6 text-3xl font-medium"></h2>
+            </a>
+            <p
+                class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden">
+            </p>
+        </div>
+        <div
+            class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
+            <a href="#" class="movie-link">
+                <div
+                    class="options bg-[#3D0000] p-3 border-4 border-black mt-3 rounded-lg flex items-center justify-center space-x-10">
+
+                    <span title="Remove from watch-list" class="remove-pinned">❌</span>
+                    <section class="options-score"></section><button title="Add to watch-list"
+                        class="pinned">📌</button>
+                </div>
+                <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5 border-2 border-black">
+                <h2 class="movie-title p-6 text-3xl font-medium"></h2>
+            </a>
+            <p
+                class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden">
+            </p>
+        </div>
+        <div
+            class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
+            <a href="#" class="movie-link">
+                <div
+                    class="options bg-[#3D0000] p-3 border-4 border-black mt-3 rounded-lg flex items-center justify-center space-x-10">
+
+                    <span title="Remove from watch-list" class="remove-pinned">❌</span>
+                    <section class="options-score"></section><button title="Add to watch-list"
+                        class="pinned">📌</button>
+                </div>
+                <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5 border-2 border-black">
+                <h2 class="movie-title p-6 text-3xl font-medium"></h2>
+            </a>
+            <p
+                class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden">
+            </p>
+        </div>
+        <div
+            class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
+            <a href="#" class="movie-link">
+                <div
+                    class="options bg-[#3D0000] p-3 border-4 border-black mt-3 rounded-lg flex items-center justify-center space-x-10">
+
+                    <span title="Remove from watch-list" class="remove-pinned">❌</span>
+                    <section class="options-score"></section><button title="Add to watch-list"
+                        class="pinned">📌</button>
+                </div>
+                <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5 border-2 border-black">
+                <h2 class="movie-title p-6 text-3xl font-medium"></h2>
+            </a>
+            <p
+                class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden">
+            </p>
+        </div>
+        <div
+            class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
+            <a href="#" class="movie-link">
+                <div
+                    class="options bg-[#3D0000] p-3 border-4 border-black mt-3 rounded-lg flex items-center justify-center space-x-10">
+
+                    <span title="Remove from watch-list" class="remove-pinned">❌</span>
+                    <section class="options-score"></section><button title="Add to watch-list"
+                        class="pinned">📌</button>
+                </div>
+                <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5 border-2 border-black">
+                <h2 class="movie-title p-6 text-3xl font-medium"></h2>
+            </a>
+            <p
+                class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden">
+            </p>
+        </div>
+        <div
+            class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
+            <a href="#" class="movie-link">
+                <div
+                    class="options bg-[#3D0000] p-3 border-4 border-black mt-3 rounded-lg flex items-center justify-center space-x-10">
+
+                    <span title="Remove from watch-list" class="remove-pinned">❌</span>
+                    <section class="options-score"></section><button title="Add to watch-list"
+                        class="pinned">📌</button>
+                </div>
+                <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5 border-2 border-black">
+                <h2 class="movie-title p-6 text-3xl font-medium"></h2>
+            </a>
+            <p
+                class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden">
+            </p>
+        </div>
+        <div
+            class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
+            <a href="#" class="movie-link">
+                <div
+                    class="options bg-[#3D0000] p-3 border-4 border-black mt-3 rounded-lg flex items-center justify-center space-x-10">
+
+                    <span title="Remove from watch-list" class="remove-pinned">❌</span>
+                    <section class="options-score"></section><button title="Add to watch-list"
+                        class="pinned">📌</button>
+                </div>
+                <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5 border-2 border-black">
+                <h2 class="movie-title p-6 text-3xl font-medium"></h2>
+            </a>
+            <p
+                class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden">
+            </p>
+        </div>
     </div>
-  
-    <div class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
-        <a href="#" class="movie-link">  
-            <div class="options">
-
-                <span title="Remove from watch-list" class="remove-pinned">❌</span><section class="options-score"></section><button  title="Add to watch-list" class="pinned">📌</button>
-                    </div>
-          <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5">
-          <h2 class="movie-title p-6 text-3xl font-medium"></h2>
-         </a>  
-          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold hidden"></p>
-      </div>
-
-      <div class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
-        <a href="#" class="movie-link"> 
-            <div class="options">
-
-                <span title="Remove from watch-list" class="remove-pinned">❌</span><section class="options-score"></section><button  title="Add to watch-list" class="pinned">📌</button>
-                    </div> 
-          <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5">
-          <h2 class="movie-title p-6 text-3xl font-medium"></h2>
-         </a>  
-          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold hidden"></p>
-      </div>
-
-      <div class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
-        <a href="#" class="movie-link">  
-            <div class="options">
-
-                <span title="Remove from watch-list" class="remove-pinned">❌</span><section class="options-score"></section><button  title="Add to watch-list" class="pinned">📌</button>
-                    </div>
-          <img src="" alt="Movie Poster" class=" movie-poster rounded-lg pt-5">
-          <h2 class="movie-title p-6 text-3xl font-medium "></h2>
-         </a>  
-          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold hidden"></p>
-      </div>
-
-
-      <div class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
-        <a href="#" class="movie-link">  
-            <div class="options">
-
-             <span title="Remove from watch-list" class="remove-pinned">❌</span><section class="options-score"></section><button  title="Add to watch-list" class="pinned">📌</button>
-                 </div>
-          <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5">
-          <h2 class="movie-title p-6 text-3xl font-medium"></h2>
-         </a>  
-          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden"></p>
-      </div>
-      <div class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
-        <a href="#" class="movie-link">  
-            <div class="options">
-
-             <span title="Remove from watch-list" class="remove-pinned">❌</span><section class="options-score"></section><button  title="Add to watch-list" class="pinned">📌</button>
-                 </div>
-          <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5">
-          <h2 class="movie-title p-6 text-3xl font-medium"></h2>
-         </a>  
-          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden"></p>
-      </div>
-      <div class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
-        <a href="#" class="movie-link">  
-            <div class="options">
-
-             <span title="Remove from watch-list" class="remove-pinned">❌</span><section class="options-score"></section><button  title="Add to watch-list" class="pinned">📌</button>
-                 </div>
-          <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5">
-          <h2 class="movie-title p-6 text-3xl font-medium"></h2>
-         </a>  
-          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden"></p>
-      </div>
-      <div class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
-        <a href="#" class="movie-link">  
-            <div class="options">
-
-             <span title="Remove from watch-list" class="remove-pinned">❌</span><section class="options-score"></section><button  title="Add to watch-list" class="pinned">📌</button>
-                 </div>
-          <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5">
-          <h2 class="movie-title p-6 text-3xl font-medium"></h2>
-         </a>  
-          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden"></p>
-      </div>
-      <div class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
-        <a href="#" class="movie-link">  
-            <div class="options">
-
-             <span title="Remove from watch-list" class="remove-pinned">❌</span><section class="options-score"></section><button  title="Add to watch-list" class="pinned">📌</button>
-                 </div>
-          <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5">
-          <h2 class="movie-title p-6 text-3xl font-medium"></h2>
-         </a>  
-          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden"></p>
-      </div>
-      <div class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
-        <a href="#" class="movie-link">  
-            <div class="options">
-
-             <span title="Remove from watch-list" class="remove-pinned">❌</span><section class="options-score"></section><button  title="Add to watch-list" class="pinned">📌</button>
-                 </div>
-          <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5">
-          <h2 class="movie-title p-6 text-3xl font-medium"></h2>
-         </a>  
-          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden"></p>
-      </div>
-      <div class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
-        <a href="#" class="movie-link">  
-            <div class="options">
-
-             <span title="Remove from watch-list" class="remove-pinned">❌</span><section class="options-score"></section><button  title="Add to watch-list" class="pinned">📌</button>
-                 </div>
-          <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5">
-          <h2 class="movie-title p-6 text-3xl font-medium"></h2>
-         </a>  
-          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden"></p>
-      </div>
-      <div class="card basis-1/10 px-3 block max-w-[22rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 shadow-xl shadow-black hover:opacity-75 mx-5 my-5">
-        <a href="#" class="movie-link">  
-            <div class="options">
-
-             <span title="Remove from watch-list" class="remove-pinned">❌</span><section class="options-score"></section><button  title="Add to watch-list" class="pinned">📌</button>
-                 </div>
-          <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5">
-          <h2 class="movie-title p-6 text-3xl font-medium"></h2>
-         </a>  
-          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center hidden"></p>
-      </div>
-    </div>
-    <footer> 
-        <p></p>
+    <footer class="p-36 text-white flex space-x-10 bg-neutral-700 justify-center">
+        <p class="">© 2023 Movie Cave All rights reserved</p>
+        <p>Privacy Policy</p>
+        <p>Terms & Conditions</p>
     </footer>
 </body>
 
