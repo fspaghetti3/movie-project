@@ -1,3 +1,88 @@
+.main-container {
+  height: 100vh;
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+.options-score {
+  color: aliceblue;
+}
+
+#cards {
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;;
+  
+}
+.filtersI {
+  display: flex;
+  flex-direction: column;
+}
+.filtersII {
+  display: flex;
+  flex-direction: column;
+  
+  display: none;
+  background-color: rgba(119, 0, 0, 0.882);
+}
+
+.filters-containerLg {
+  width: fit-content;
+  height: fit-content;
+  position: fixed;
+  padding: 10px;;
+  right: 0px;
+  top: 55px;
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+  background-color: #700;
+  color: white;
+  display: none;
+}
+
+.filtersBtn {
+  background-color: #700;
+  width: fit-content;
+  height: fit-content;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  padding-left: 10px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  font-size: large;
+  letter-spacing: 1px;
+  writing-mode: vertical-lr;
+  color: white;
+  border-bottom-left-radius: 20%;
+
+ 
+}
+.exitFiltersBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 12px;
+  background-color: black;
+  width: 100px;
+  height: 50px;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  padding-left: 10px;
+  padding-right: 2px;
+  
+  letter-spacing: 1px;
+
+  color: white;
+  border-bottom-left-radius: 20%;
+ 
+}
+
 .watchlist-containerLg {
   width: auto;
   flex-basis: 10%;
@@ -65,3 +150,41 @@
 #watchlist {
   list-style: decimal;
 }
+
+.options {
+height: 8%;
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
+background-color: black;
+border-top-right-radius: 50%;
+border-top-left-radius: 50%;
+cursor: pointer;
+
+}
+
+.movie-title {
+font-size: 13px;
+height: 8%;
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
+background-color: black;
+border-bottom-right-radius: 50%;
+border-bottom-left-radius: 50%;
+color: whitesmoke;
+}
+
+.movie-description {
+  display: none;
+}
+
+.movie-poster {
+  display: block;
+}
+
+

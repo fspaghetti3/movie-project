@@ -1,15 +1,3 @@
-
-
-function showWL() {
-  document.querySelector(".open-watchlist").style.display = "none";
-  document.querySelector(".watchlist-containerMd").style.display = "block";
-} 
-
-function hideWL() {
-  document.querySelector(".open-watchlist").style.display = "block";
-  document.querySelector(".watchlist-containerMd").style.display = "none";
-}
-
 const options = {
   method: "GET",
   headers: {
@@ -62,3 +50,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+// Shows Watch List on button click
+function showWL() {
+  document.querySelector(".open-watchlist").style.display = "none";
+  document.querySelector(".watchlist-containerMd").style.display = "block";
+}
+// Hides Watch List on click of X button
+function hideWL() {
+  document.querySelector(".open-watchlist").style.display = "block";
+  document.querySelector(".watchlist-containerMd").style.display = "none";
+}
+// Shows filters List on click of FILTERS button
+function showFilters() {
+  document.querySelector(".filters-containerLg").style.display = "block";
+}
+// Hides filters List on click of EXIT FILTERS button
+function hideFilters() {
+  if (document.querySelector(".filters-containerLg").style.display == "block") {
+    document.querySelector(".filters-containerLg").style.display = "none";
+  }
+}
+
+// Expands filters
+function expandFilter() {
+  document.querySelector(".filtersI-I").style.display = "block";
+}
+
+// Hides expanded filters List on click of primary filter
+function hideFiltersII() {
+  if (document.querySelector(".filtersII").style.display == "block") {
+    document.querySelector(".filtersII").style.display = "none";
+  }
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="./assets/styles/style.css">
     <script src="/assets/js/script.js"></script>
     
@@ -24,12 +25,54 @@
     <section class="flex justify-center m-10">
         <input type="text" id="searchBar" class="rounded-md border-2 border-black shadow-xl shadow-black scale-125 w-96 placeholder:text-center placeholder:text-slate-400 " placeholder="Search for your favorite movies!"></input>
     </section>
+    
+    <aside class="filters">
+     
+      <button class="exitFiltersBtn" onclick="hideFilters()"> EXIT FILTERS</button>
+      <button class="filtersBtn" onclick="showFilters()" onclick="hideFilters()">FILTERS</button>
+      <div class="filters-containerLg">
+        <section class="filtersI">
+      
+              <button class="filtersI" onclick="expandFilter()" onclick="hideFiltersII()">Filter 1</button>
+              <div  class="filtersII">
+                <button>2</button>
+                <button>3</button>
+                <button>2</button>
+                <button>3</button>
+                <button>2</button>
+                <button>3</button>
+              </div>
+              
+            
+         
+              <button>Filter 2</button>
+        
+         
+              <button>Filter 3</button>
+              
+         
+              <button>Filter 4</button>
+        
+            
+              <button>Filter 5</button>
+     
+        </section>
+      </div>
 
-    <div class="watchlist-containerLg">
+
+    </aside>
+
+
+
+
+
+
+<!-- Line 28-42 is the Watchlist HTML -->
+    <aside class="watchlist-containerLg">
       <button class="open-watchlist" onclick="showWL()">Your Watch List</button>
       <div class="watchlist-containerMd">
         <section class="watchlist-header">
-          <button class="close-watchlist" onclick="hideWL()"+>&times;</button>
+          <button class="close-watchlist" onclick="hideWL()">&times;</button>
           <h4>Your Watch-List</h4>
         </section>
         <section class= "watchlist">
@@ -39,51 +82,116 @@
         </ol>
         </section>
       </div>
-      </div>
-
-<div class="flex">
+    </aside>
+<section class="main-container">
+<div id="cards" class="flex">
     <div class="card basis-1/5 px-3">
       <a href="#" class="movie-link">  
+        <div class="options">
+          
+          <span title="Remove from watch-list" class="remove-pinned">❌</span><section class="options-score"></section><button  title="Add to watch-list" class="pinned">📌</button>
+           </div> 
         <img src="" alt="Movie Poster" class="movie-poster">
         <h2 class="movie-title"></h2>
        </a>  
         <p class="movie-description"></p>
     </div>
-  
-    <div class="card basis-1/5 px-3">
+
+    <div id="cards" class="card basis-1/5 px-3">
         <a href="#" class="movie-link">  
+          <div class="options">
+            <span title="Remove from watch-list" class="remove-pinned">❌</span></p><button  title="Add to watch-list" class="pinned">📌</button>
+             </div> 
           <img src="" alt="Movie Poster" class="movie-poster">
           <h2 class="movie-title"></h2>
          </a>  
           <p class="movie-description"></p>
       </div>
 
-      <div class="card basis-1/5 px-3">
+      <div id="cards" class="card basis-1/5 px-3">
+        <a href="#" class="movie-link"> 
+          <div class="options">
+
+            <span title="Remove from watch-list" class="remove-pinned">❌</span></p><button  title="Add to watch-list" class="pinned">📌</button>
+            </div> 
+          <img src="" alt="Movie Poster" class="movie-poster">
+          <h2 class="movie-title"></h2>
+         </a>  
+          <p class="movie-description"></p>
+      </div>
+      <div id="cards" class="card basis-1/5 px-3">
+        <a href="#" class="movie-link">  
+          <div class="options">
+            <span title="Remove from watch-list" class="remove-pinned">❌</span></p><button  title="Add to watch-list" class="pinned">📌</button>
+             </div> 
+          <img src="" alt="Movie Poster" class="movie-poster">
+          <h2 class="movie-title"></h2>
+         </a>  
+          <p class="movie-description"></p>
+      </div>
+      <div id="cards" class="card basis-1/5 px-3">
+        <div class="options">
+         <span title="Remove from watch-list" class="remove-pinned">❌</span></p><button  title="Add to watch-list" class="pinned">📌</button>
+          </div> 
         <a href="#" class="movie-link">  
           <img src="" alt="Movie Poster" class="movie-poster">
           <h2 class="movie-title"></h2>
          </a>  
           <p class="movie-description"></p>
       </div>
-
-      <div class="card basis-1/5 px-3">
-
+      <div id="cards" class="card basis-1/5 px-3">
+        <div class="options">
+         <span title="Remove from watch-list" class="remove-pinned">❌</span></p><button  title="Add to watch-list" class="pinned">📌</button>
+          </div> 
         <a href="#" class="movie-link">  
           <img src="" alt="Movie Poster" class="movie-poster">
           <h2 class="movie-title"></h2>
          </a>  
           <p class="movie-description"></p>
       </div>
-
-
-      <div class="card basis-1/5 px-3">
+      <div id="cards" class="card basis-1/5 px-3">
+        <div class="options">
+         <span title="Remove from watch-list" class="remove-pinned">❌</span></p><button  title="Add to watch-list" class="pinned">📌</button>
+          </div> 
         <a href="#" class="movie-link">  
           <img src="" alt="Movie Poster" class="movie-poster">
           <h2 class="movie-title"></h2>
          </a>  
           <p class="movie-description"></p>
       </div>
+      <div id="cards" class="card basis-1/5 px-3">
+        <div class="options">
+         <span title="Remove from watch-list" class="remove-pinned">❌</span></p><button  title="Add to watch-list" class="pinned">📌</button>
+          </div> 
+        <a href="#" class="movie-link">  
+          <img src="" alt="Movie Poster" class="movie-poster">
+          <h2 class="movie-title"></h2>
+         </a>  
+          <p class="movie-description"></p>
+      </div>
+      <div id="cards" class="card basis-1/5 px-3">
+        <div class="options">
+         <span title="Remove from watch-list" class="remove-pinned">❌</span></p><button  title="Add to watch-list" class="pinned">📌</button>
+          </div> 
+        <a href="#" class="movie-link">  
+          <img src="" alt="Movie Poster" class="movie-poster">
+          <h2 class="movie-title"></h2>
+         </a>  
+          <p class="movie-description"></p>
+      </div>
+      <div id="cards" class="card basis-1/5 px-3">
+        <div class="options">
+         <span title="Remove from watch-list" class="remove-pinned">❌</span></p><button  title="Add to watch-list" class="pinned">📌</button>
+          </div> 
+        <a href="#" class="movie-link">  
+          <img src="" alt="Movie Poster" class="movie-poster">
+          <h2 class="movie-title"></h2>
+         </a>  
+          <p class="movie-description"></p>
+      </div>
+   
     </div>
+  </section>
 </body>
 
 
