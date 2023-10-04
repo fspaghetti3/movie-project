@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+
 // Add next bit of code here
 
 
@@ -124,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // DOMCONTENTLOADED Bracket set
+
 });
 
 
