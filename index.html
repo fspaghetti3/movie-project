@@ -20,6 +20,59 @@
 
     </header>
 
+    <aside class="filters">
+     
+      <button class="exitFiltersBtn" onclick="hideFilters()"> EXIT FILTERS</button>
+      <button class="filtersBtn" onclick="showFilters()" onclick="hideFilters()">FILTERS</button>
+      <div class="filters-containerLg">
+        <section class="filtersI">
+      
+              <button class="filtersI" onclick="expandFilter()" onclick="hideFiltersII()">Filter 1</button>
+              <div  class="filtersII">
+                <button>2</button>
+                <button>3</button>
+                <button>2</button>
+                <button>3</button>
+                <button>2</button>
+                <button>3</button>
+              </div>
+              
+            
+         
+              <button>Filter 2</button>
+        
+         
+              <button>Filter 3</button>
+              
+         
+              <button>Filter 4</button>
+        
+            
+              <button>Filter 5</button>
+     
+        </section>
+      </div>
+  
+  
+    </aside>
+  
+    <!-- Line 28-42 is the Watchlist HTML -->
+    <aside class="watchlist-containerLg">
+      <button class="open-watchlist" onclick="showWL()">Your Watch List</button>
+      <div class="watchlist-containerMd">
+        <section class="watchlist-header">
+          <button class="close-watchlist" onclick="hideWL()">&times;</button>
+          <h4>Your Watch-List</h4>
+        </section>
+        <section class= "watchlist">
+          <ol id="watchlist">
+          <li>Avengers Endgame</li>
+         
+        </ol>
+        </section>
+      </div>
+    </aside>
+
     <div class="watchlist-containerLg">
       <button class="open-watchlist" onclick="showWL()">Watchlist</button>
       <div class="watchlist-containerMd">
