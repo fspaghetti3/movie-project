@@ -1,4 +1,3 @@
-
 function showWL() {
   document.querySelector(".open-watchlist").style.display = "none";
   document.querySelector(".watchlist-containerMd").style.display = "block";
@@ -65,30 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
   }
-});
-
-        .then(response => response.json())
-        .then(movie => {
-          document.querySelector('.movie-poster').src = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
-          document.querySelector('.movie-title').innerText = movie.title;
-          document.querySelector('.movie-description').innerText = movie.overview;
-        });
-    }
-
-    function displayResults(movies) {
-      const cards = document.querySelectorAll('.card');
-
-      movies.slice(0, cards.length).forEach((movie, index) => {
-        cards[index].querySelector('.movie-poster').src = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
-        cards[index].querySelector('.movie-title').innerText = movie.title;
-        cards[index].querySelector('.movie-description').innerText = movie.overview;
-
-        const movieLink = cards[index].querySelector('.movie-link')
-        movieLink.href = `/movie-details.html?id=${movie.id}`
-      });
-    }
-  }
-
   document.getElementById('searchBar').addEventListener('keyup', function(event) {
     if (event.key === 'Enter') {
       const query = event.target.value;
@@ -110,5 +85,45 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error('Error: ' + error)
     })
   }
+
+  
+  function displayResults(movies) {
+    const cards = document.querySelectorAll('.card');
+
+    movies.slice(0, cards.length).forEach((movie, index) => {
+      cards[index].querySelector('.movie-poster').src = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
+      cards[index].querySelector('.movie-title').innerText = movie.title;
+      cards[index].querySelector('.movie-description').innerText = movie.overview;
+
+      const movieLink = cards[index].querySelector('.movie-link')
+      movieLink.href = `/movie-details.html?id=${movie.id}`
+    });
+  }
+
+// Add next bit of code here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// DOMCONTENTLOADED Bracket set
 });
+
 
