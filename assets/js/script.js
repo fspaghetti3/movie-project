@@ -124,6 +124,17 @@ function displayResults(movies) {
   });
 }
 
+function showFilters() {
+    document.querySelector(".filters-containerLg").style.display = "block";
+  }
+//   Hides filters List on click of EXIT FILTERS button
+  function hideFilters() {
+    if (document.querySelector(".filters-containerLg").style.display == "block") {
+      document.querySelector(".filters-containerLg").style.display = "none";
+    }
+  }
+
+
 // Shows Watch List on button click
 function showWL() {
   document.querySelector(".open-watchlist").style.display = "none";
@@ -134,18 +145,11 @@ function hideWL() {
   document.querySelector(".open-watchlist").style.display = "block";
   document.querySelector(".watchlist-containerMd").style.display = "none";
 }
-// Shows filters List on click of FILTERS button
-function showFilters() {
-  document.querySelector(".filters-containerLg").style.display = "block";
-}
-// Hides filters List on click of EXIT FILTERS button
-function hideFilters() {
-  if (document.querySelector(".filters-containerLg").style.display == "block") {
-    document.querySelector(".filters-containerLg").style.display = "none";
-  }
-}
+
+
 
 // Expands filters
 function expandFilter() {
   document.querySelector(".filtersI-I").style.display = "block";
 }
+
