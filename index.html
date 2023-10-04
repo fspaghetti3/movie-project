@@ -20,6 +20,25 @@
         
 
     </header>
+
+    <div class="watchlist-containerLg">
+      <button class="open-watchlist" onclick="showWL()">Watchlist</button>
+      <div class="watchlist-containerMd">
+        <section class="watchlist-header">
+          <h4>Your Watch-List</h4>
+          <div class="closeBtn-container">
+            <span class="close-watchlist" onclick="hideWL()">&times;</span>
+        </div>
+        </section>
+        <section class= "watchlist">
+          <ol id="watchlist">
+          <li>movie 1</li>
+        </ol>
+        </section>
+      </div>
+      </div>
+
+
     
     <section class="flex justify-center m-10 ">
         <input type="text" id="searchBar" class="rounded-md text-center  border-black shadow-lg shadow-red-700 scale-125 w-[28rem] h-[3rem] placeholder:text-center placeholder:text-slate-400 " placeholder="Search for your favorite movies!"></input>
