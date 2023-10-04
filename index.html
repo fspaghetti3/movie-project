@@ -13,17 +13,19 @@
 
 
 
-<body class="card-container">
+<body class="card-container bg-black">
 
-    <header class="flex items-center justify-center bg-gradient-to-r from-red-700 to-black">
+
+    <header class="flex items-center justify-center bg-gradient-to-r from-red-700 to-black border-b-4 border-white">
         <img src="./assets/images/New Project (1).png" alt="" class="max-w-xs">
-        <h1 class="text-5xl justify-center pr-28 text-white">The Movie Cave</h1>
+        <h1 class="text-5xl justify-center pr-28 text-white font-sans">The Movie Cave</h1>
         
-    </header>
 
+    </header>
 
     <section class="flex justify-center m-10">
         <input type="text" id="searchBar" class="rounded-md border-2 border-black shadow-xl shadow-black scale-125 w-96 placeholder:text-center placeholder:text-slate-400 " placeholder="Search for your favorite movies!"></input>
+
     </section>
     
     <aside class="filters">
@@ -63,10 +65,6 @@
     </aside>
 
 
-
-
-
-
 <!-- Line 28-42 is the Watchlist HTML -->
     <aside class="watchlist-containerLg">
       <button class="open-watchlist" onclick="showWL()">Your Watch List</button>
@@ -77,7 +75,7 @@
         </section>
         <section class= "watchlist">
           <ol id="watchlist">
-          <li>Avengers Endgamehhhhhhhhhhhhhhhhhhh</li>
+          <li>Avengers Endgame</li>
          
         </ol>
         </section>
@@ -93,8 +91,9 @@
            </div> 
         <img src="" alt="Movie Poster" class="movie-poster">
         <h2 class="movie-title"></h2>
+
        </a>  
-        <p class="movie-description"></p>
+        <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold"></p>
     </div>
 
     <div id="cards" class="card basis-1/5 px-3">
@@ -105,8 +104,9 @@
           <img src="" alt="Movie Poster" class="movie-poster">
           <h2 class="movie-title"></h2>
          </a>  
-          <p class="movie-description"></p>
+          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold"></p>
       </div>
+
 
       <div id="cards" class="card basis-1/5 px-3">
         <a href="#" class="movie-link"> 
@@ -126,9 +126,23 @@
              </div> 
           <img src="" alt="Movie Poster" class="movie-poster">
           <h2 class="movie-title"></h2>
+
          </a>  
-          <p class="movie-description"></p>
+          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold"></p>
       </div>
+
+      <div id="cards" class="card basis-1/5 px-3">
+        <div class="options">
+         <span title="Remove from watch-list" class="remove-pinned">❌</span></p><button  title="Add to watch-list" class="pinned">📌</button>
+          </div> 
+
+        <a href="#" class="movie-link">  
+          <img src="" alt="Movie Poster" class=" movie-poster rounded-lg pt-5">
+          <h2 class="movie-title p-6 text-3xl font-medium "></h2>
+         </a>  
+          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold"></p>
+      </div>
+
       <div id="cards" class="card basis-1/5 px-3">
         <div class="options">
          <span title="Remove from watch-list" class="remove-pinned">❌</span></p><button  title="Add to watch-list" class="pinned">📌</button>
@@ -173,31 +187,26 @@
         <div class="options">
          <span title="Remove from watch-list" class="remove-pinned">❌</span></p><button  title="Add to watch-list" class="pinned">📌</button>
           </div> 
+
         <a href="#" class="movie-link">  
-          <img src="" alt="Movie Poster" class="movie-poster">
-          <h2 class="movie-title"></h2>
+          <img src="" alt="Movie Poster" class="movie-poster rounded-lg pt-5">
+          <h2 class="movie-title p-6 text-3xl font-medium"></h2>
          </a>  
-          <p class="movie-description"></p>
-      </div>
-      <div id="cards" class="card basis-1/5 px-3">
-        <div class="options">
-         <span title="Remove from watch-list" class="remove-pinned">❌</span></p><button  title="Add to watch-list" class="pinned">📌</button>
-          </div> 
-        <a href="#" class="movie-link">  
-          <img src="" alt="Movie Poster" class="movie-poster">
-          <h2 class="movie-title"></h2>
-         </a>  
-          <p class="movie-description"></p>
+          <p class="movie-description text-base text-neutral-900 dark:text-neutral-200 text-bold justify-center text-center"></p>
       </div>
    
     </div>
+
   </section>
+
+    <footer> 
+        <p></p>
+    </footer>
+
 </body>
 
 
-<footer> 
 
-</footer>
 
 
 
