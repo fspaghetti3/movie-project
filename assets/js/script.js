@@ -99,5 +99,33 @@ document.addEventListener("DOMContentLoaded", function () {
       movieLink.href = `/movie-details.html?id=${movie.id}`
     });
   }
+
+
+// Add next bit of code here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// DOMCONTENTLOADED Bracket set
+
 });
+
 
