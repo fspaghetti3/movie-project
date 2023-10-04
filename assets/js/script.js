@@ -78,3 +78,12 @@ function displayResults(movies) {
     movieLink.href = `/movie-details.html?id=${movie.id}`;
   });
 }
+function showFilters() {
+    document.querySelector(".filters-containerLg").style.display = "block";
+  }
+//   Hides filters List on click of EXIT FILTERS button
+  function hideFilters() {
+    if (document.querySelector(".filters-containerLg").style.display == "block") {
+      document.querySelector(".filters-containerLg").style.display = "none";
+    }
+  }
