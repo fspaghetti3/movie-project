@@ -1,6 +1,9 @@
 const API_KEY = '47d7119b1ceef15064fd4cc997c6f5bb';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
+
+const OMDB_API_KEY = '16d4bde8'
+
 const options = {
   method: "GET",
   headers: {
@@ -66,6 +69,48 @@ function searchMovies(query) {
     .catch(error => console.error('Error: ' + error));
 }
 
+    fetch(url)
+        .then(response => response.json())
+        .then(data => displayResults(data.results))
+        .catch(error => console.error('Error: ' + error));
+
+function fetchBoxOffice(title) {
+  const OMDB_URL = `http://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${OMDB_API_KEY}`;
+
+  fetch(OMDB_URL)
+      .then(response => response.json())
+      .then(data => {
+          if (data && data.BoxOffice) {
+
+              document.querySelector(".movie-box-office").innerText = `Box Office: ${data.BoxOffice}`;
+          } else {
+              console.error("Couldn't fetch box office data from OMDb.");
+          }
+      })
+      .catch(error => console.error('Error fetching box office info from OMDb:', error));
+}
+
+function handleMovieDetailsPage() {
+  if (document.querySelector(".movie-poster")) {
+      const urlParam = new URLSearchParams(window.location.search);
+      const movieID = urlParam.get("id");
+
+      if (movieID) {
+          fetch(`${BASE_URL}/movie/${movieID}`, options)
+              .then((response) => response.json())
+              .then((movie) => {
+ 
+                  document.querySelector(".movie-poster").src =
+                      "https://image.tmdb.org/t/p/w500" + movie.poster_path;
+                  document.querySelector(".movie-title").innerText = movie.title;
+                  document.querySelector(".movie-description").innerText = movie.overview;
+
+ 
+                  fetchBoxOffice(movie.title);
+              });
+      }
+  }
+}
 function displayResults(movies) {
   const cards = document.querySelectorAll('.card');
 
@@ -78,6 +123,7 @@ function displayResults(movies) {
     movieLink.href = `/movie-details.html?id=${movie.id}`;
   });
 }
+
 function showFilters() {
     document.querySelector(".filters-containerLg").style.display = "block";
   }
@@ -87,3 +133,23 @@ function showFilters() {
       document.querySelector(".filters-containerLg").style.display = "none";
     }
   }
+
+
+// Shows Watch List on button click
+function showWL() {
+  document.querySelector(".open-watchlist").style.display = "none";
+  document.querySelector(".watchlist-containerMd").style.display = "block";
+}
+// Hides Watch List on click of X button
+function hideWL() {
+  document.querySelector(".open-watchlist").style.display = "block";
+  document.querySelector(".watchlist-containerMd").style.display = "none";
+}
+
+
+
+// Expands filters
+function expandFilter() {
+  document.querySelector(".filtersI-I").style.display = "block";
+}
+
