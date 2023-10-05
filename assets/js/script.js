@@ -108,6 +108,11 @@ function displayResults(movies) {
     cards[index].querySelector('.movie-title').innerText = movie.title;
     cards[index].querySelector('.movie-description').innerText = movie.overview;
 
+    const ratingEl = document.createElement("p");
+    ratingEl.className = "movie-rating";
+    ratingEl.innerText = `Rating: ${movie.vote_average} / 10`
+    cards[index].appendChild(ratingEl);
+
     const movieLink = cards[index].querySelector('.movie-link');
     movieLink.href = `/movie-details.html?id=${movie.id}`;
   });
@@ -129,7 +134,7 @@ function showWL() {
   document.querySelector(".open-watchlist").style.display = "none";
   document.querySelector(".watchlist-containerMd").style.display = "block";
 }
-// Hides Watch List on click of X button
+// Hides Watch List on click of X button HEllO
 function hideWL() {
   document.querySelector(".open-watchlist").style.display = "block";
   document.querySelector(".watchlist-containerMd").style.display = "none";
@@ -141,3 +146,4 @@ function hideWL() {
 function expandFilter() {
   document.querySelector(".filtersI-I").style.display = "block";
 }
+
