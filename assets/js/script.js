@@ -52,10 +52,6 @@ function searchMovies(query) {
     .catch(error => console.error('Error: ' + error));
 }
 
-    fetch(url)
-        .then(response => response.json())
-        .then(data => displayResults(data.results))
-        .catch(error => console.error('Error: ' + error));
 
 function fetchBoxOffice(title) {
   const OMDB_URL = `http://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${OMDB_API_KEY}`;
@@ -107,23 +103,26 @@ function handleMovieDetailsPage() {
       }
   }
 }
+
 function displayResults(movies) {
-  const cards = document.querySelectorAll('.card');
-
-  movies.slice(0, cards.length).forEach((movie, index) => {
-    cards[index].querySelector('.movie-poster').src = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
-    cards[index].querySelector('.movie-title').innerText = movie.title;
-    cards[index].querySelector('.movie-description').innerText = movie.overview;
-
-    const ratingEl = document.createElement("p");
-    ratingEl.className = "movie-rating";
-    ratingEl.innerText = `Rating: ${movie.vote_average} / 10`
-    cards[index].appendChild(ratingEl);
-
-    const movieLink = cards[index].querySelector('.movie-link');
-    movieLink.href = `/movie-details.html?id=${movie.id}`;
-  });
-}
+    const cards = document.querySelectorAll('.card');
+    movies.slice(0, cards.length).forEach((movie, index) => {
+      const card = cards[index]
+      card.querySelector('.movie-poster').src = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
+      card.querySelector('.movie-title').innerText = movie.title;
+      card.querySelector('.movie-description').innerText = movie.overview;
+      const existingRating = card.querySelector('.movie-rating')
+      if (existingRating) {
+        card.removeChild(existingRating);
+      }
+      const ratingEl = document.createElement("p");
+      ratingEl.className = "movie-rating";
+      ratingEl.innerText = `Rating: ${movie.vote_average} / 10`
+      cards[index].appendChild(ratingEl);
+      const movieLink = cards[index].querySelector('.movie-link');
+      movieLink.href = `/movie-details.html?id=${movie.id}`;
+    });
+  }
 
 function showFilters() {
     document.querySelector(".filters-containerLg").style.display = "block";
