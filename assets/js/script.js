@@ -79,12 +79,19 @@ function handleMovieDetailsPage() {
       const movieID = urlParam.get("id");
 
       if (movieID) {
+        const moviePosters = document.querySelectorAll(".movie-poster");
+        if (moviePosters.length) {}
           fetch(`${BASE_URL}/movie/${movieID}`, options)
               .then((response) => response.json())
               .then((movie) => {
+
+                const posterURL = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
  
-                  document.querySelector(".movie-poster").src =
-                      "https://image.tmdb.org/t/p/w500" + movie.poster_path;
+                  moviePosters.forEach(posterElement => {
+                    posterElement.src = posterURL;
+                  });
+
+
                   document.querySelector(".movie-title").innerText = movie.title;
                   document.querySelector(".movie-description").innerText = movie.overview;
 
