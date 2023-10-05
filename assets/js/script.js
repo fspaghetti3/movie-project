@@ -140,7 +140,7 @@ function showWL() {
   document.querySelector(".open-watchlist").style.display = "none";
   document.querySelector(".watchlist-containerMd").style.display = "block";
 }
-// Hides Watch List on click of X button
+// Hides Watch List on click of X button HEllO
 function hideWL() {
   document.querySelector(".open-watchlist").style.display = "block";
   document.querySelector(".watchlist-containerMd").style.display = "none";
