@@ -43,23 +43,6 @@ function fetchPopularMovies() {
     .catch((err) => console.error(err));
 }
 
-function handleMovieDetailsPage() {
-  if (document.querySelector(".movie-poster")) {
-    const urlParam = new URLSearchParams(window.location.search);
-    const movieID = urlParam.get("id");
-
-    if (movieID) {
-      fetch(`${BASE_URL}/movie/${movieID}`, options)
-        .then((response) => response.json())
-        .then((movie) => {
-          document.querySelector(".movie-poster").src =
-            "https://image.tmdb.org/t/p/w500" + movie.poster_path;
-          document.querySelector(".movie-title").innerText = movie.title;
-          document.querySelector(".movie-description").innerText = movie.overview;
-        });
-    }
-  }
-}
 
 function searchMovies(query) {
   const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}`;
@@ -104,6 +87,12 @@ function handleMovieDetailsPage() {
                       "https://image.tmdb.org/t/p/w500" + movie.poster_path;
                   document.querySelector(".movie-title").innerText = movie.title;
                   document.querySelector(".movie-description").innerText = movie.overview;
+
+                  document.querySelector(".movie-release").innerText = `Release Date: ${movie.release_date}`;
+                  document.querySelector(".movie-runtime").innerText = `Runtime: ${movie.runtime} minutes.`
+
+                  const genreNames = movie.genres.map(genre => genre.name).join(", ");
+                  document.querySelector(".movie-genres").innerText = `Genres: ${genreNames}`
 
  
                   fetchBoxOffice(movie.title);
