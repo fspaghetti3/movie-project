@@ -133,7 +133,7 @@ function displayResults(movies) {
       card.removeChild(existingRating);
     }
     const ratingEl = document.createElement("p");
-    ratingEl.className = "movie-rating";
+    ratingEl.className = "movie-rating text-white font-bold bg-[#3D0000] text-xl rounded-md border-4 border-black m-5 ";
     ratingEl.innerText = `TMDB Rating: ${parseFloat(
       movie.vote_average * 10
     ).toFixed(1)}%`;
