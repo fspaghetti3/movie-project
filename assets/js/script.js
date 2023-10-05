@@ -163,3 +163,25 @@ function hideWL() {
   document.querySelector(".open-watchlist").style.display = "block";
   document.querySelector(".watchlist-containerMd").style.display = "none";
 }
+
+// Updates Watchlist upon click of pin and saves in local storage
+let pinWatchlistBtn = document.querySelector(".pinned");
+
+document.addEventListener("click", function (event) {
+  if (event.target && event.target.classList.contains("pinned")) {
+    var cardInfo = event.target.closest(".card");
+    var cardValue = cardInfo.querySelector(".movie-title").textContent;
+    var storeName = JSON.parse(localStorage.getItem("listName")) || [];
+    storeName.push(cardValue);
+    localStorage.setItem("listName", JSON.stringify(storeName));
+
+    var savedWatchlist = document.getElementById("watchlist");
+
+    for (let i = 0; i < storeName.length; i++) {
+      const element = storeName[i];
+      var createdItem = document.createElement("li");
+      createdItem.textContent = element;
+      savedWatchlist.appendChild(createdItem);
+    }
+  }
+});
