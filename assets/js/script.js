@@ -59,7 +59,7 @@ function searchMovies(query) {
 }
 
 function fetchBoxOffice(title) {
-  const OMDB_URL = `http://www.omdbapi.com/?t=${encodeURIComponent(
+  const OMDB_URL = `https://www.omdbapi.com/?t=${encodeURIComponent(
     title
   )}&apikey=${OMDB_API_KEY}`;
 

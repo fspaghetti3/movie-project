@@ -1,9 +1,10 @@
+
 # The Movie Cave
 
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
 - What was your motivation? 
-The motivation that drove the group to make the application was the want to make a more appealing and user friendly movie application then what’s currently on the market.
+The motivation that drove the group to make the application was the desire to make a more appealing and user friendly movie application then what’s currently on the market.
 
 - What problem does it solve? 
 Brings a simplistic and user friendly movie database to the user.
@@ -40,4 +41,3 @@ Jakob Pfiefer
 Joshua Payne
 
 Fred Soledor
-
